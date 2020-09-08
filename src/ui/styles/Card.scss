@@ -1,0 +1,30 @@
+@import "variables";
+.card {
+  border: 2px solid $card-border-color;
+  border-radius: 7%;
+  display: block;
+  height: auto;
+  width: auto;
+  &:hover {
+    cursor: pointer;
+    border-color: $card-border-color-hovered;
+  }
+
+  &.hint {
+    border-color: $card-border-color-hint;
+    &:hover {
+      border-color: $card-border-color-hint-hovered;
+    }
+  }
+
+  &.selected {
+    border-color: $card-border-color-selected;
+    &:hover {
+      border-color: $card-border-color-selected-hovered;
+    }
+  }
+  &.unhoverable:hover {
+    cursor: default;
+    border-color: $card-border-color;
+  }
+}

@@ -1,0 +1,66 @@
+// Mostly just grid stuff
+// Primary reference: https://medium.com/@christopherjfoster/aspect-ratio-media-queries-3ad54ba64611
+@import "./variables";
+#title-wrapper {
+  grid-area: title;
+}
+#board-wrapper {
+  grid-area: board;
+}
+#controls-wrapper {
+  grid-area: controls;
+}
+
+#game {
+  display: grid;
+  // For centering
+  margin: 0 auto;
+  gap: 2px;
+  // Make sure title is centered
+  & #title {
+    text-align: center;
+  }
+  // Layout
+  @media (max-aspect-ratio: $max-thin-ratio) {
+    color: red;
+    width: 90vw;
+    height: 130vw;
+    // prettier-ignore
+    grid-template:
+      " title" 6fr
+      " board" 98fr
+      "controls" 22fr /
+         98fr;
+  }
+  @media (min-aspect-ratio: $max-thin-ratio) and (max-aspect-ratio: $max-medium-ratio) {
+    color: orange;
+    width: 75vh;
+    height: 97.5vh;
+    // prettier-ignore
+    grid-template:
+      " title" 6fr
+      " board" 98fr
+      "controls" 22fr /
+         98fr;
+  }
+  @media (min-aspect-ratio: $max-medium-ratio) and (max-aspect-ratio: $max-wide-ratio) {
+    color: green;
+    width: 97.5vw;
+    height: 75vw;
+    // prettier-ignore
+    grid-template:
+      "title    title " 6fr
+      "board  controls" 91fr /
+        91fr    36fr;
+  }
+  @media (min-aspect-ratio: $max-wide-ratio) {
+    color: blue;
+    width: 130vh;
+    height: 90vh;
+    // prettier-ignore
+    grid-template:
+      "title    title " 6fr
+      "board  controls" 91fr /
+       91fr     36fr;
+  }
+}

@@ -1,0 +1,41 @@
+// Colors from my last project
+$light-background-color: white;
+
+$default-button-color: #707070;
+$colors: (
+  "green": #44af69,
+  "red": #f8333c,
+  "orange": #fcab10,
+  "blue": #2b9eb3,
+);
+
+// Short getters
+@function color($name) {
+  @return map-get($map: $colors, $key: $name);
+}
+
+$button-height: 60px;
+$button-radius: 10px;
+$button-animation-speed: 0.3s ease-out;
+$min-button-width: 80px;
+
+$min-board-width: 200px;
+
+$card-radius: 7%;
+$card-border-color: black;
+$card-border-color-hovered: gray;
+$card-border-color-selected: blue;
+$card-border-color-selected-hovered: lighten(
+  $color: $card-border-color-selected,
+  $amount: 30,
+);
+$card-border-color-hint: green;
+$card-border-color-hint-hovered: darken(
+  $color: $card-border-color-hint,
+  $amount: 5,
+);
+
+// Aspect ratios
+$max-thin-ratio: "3/4";
+$max-medium-ratio: "1/1";
+$max-wide-ratio: "4/3";

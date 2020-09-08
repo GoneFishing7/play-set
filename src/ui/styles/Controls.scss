@@ -1,0 +1,12 @@
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  & > * {
+    padding: 2px;
+    margin: 0 auto;
+    &#score {
+      text-align: center;
+      flex-basis: 100%;
+    }
+  }
+}
