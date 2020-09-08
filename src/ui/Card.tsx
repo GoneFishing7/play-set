@@ -25,62 +25,63 @@ const Card = (props: Props) => {
     classes.push("hint");
   }
   return (
-    <svg
-      viewBox="0 0 150 100"
-      preserveAspectRatio="xMidYMid meet"
-      className={classes.join(" ")}
-      onClick={props.onClick}
-    >
-      <defs>
-        {Object.values(CardColorEnum).map((co) => (
-          <pattern
-            id={`${co}half`}
-            x="0"
-            y="0"
-            width="10"
-            height="4"
-            patternUnits="userSpaceOnUse"
-            key={`${co}half`}
-          >
-            {/* 
-                // @ts-ignore */}
-            <rect width="10" height="1" stroke={co} />
-          </pattern>
-        ))}
-        {Object.values(CardColorEnum).map((co) => (
-          <pattern
-            id={`${co}full`}
-            x="0"
-            y="0"
-            width="1"
-            height="1"
-            patternUnits="userSpaceOnUse"
-            key={`${co}full`}
-          >
-            {/* 
-                // @ts-ignore */}
-            <rect width="1" height="1" stroke={co} />
-          </pattern>
-        ))}
-      </defs>
-      <g
-        transform={`translate(${
-          number === "one" ? "0" : number === "two" ? "-20" : "-40"
-        }, 0)`}
+    <button className="card-wrapper" onClick={props.onClick}>
+      <svg
+        viewBox="0 0 150 100"
+        preserveAspectRatio="xMidYMid meet"
+        className={classes.join(" ")}
       >
-        {generateSymbol(color, symbol, shading)}
-      </g>
-      {number !== "one" && (
-        <g transform={`translate(${number === "two" ? "20" : "0"}, 0)`}>
+        <defs>
+          {Object.values(CardColorEnum).map((co) => (
+            <pattern
+              id={`${co}half`}
+              x="0"
+              y="0"
+              width="10"
+              height="4"
+              patternUnits="userSpaceOnUse"
+              key={`${co}half`}
+            >
+              {/* 
+                // @ts-ignore */}
+              <rect width="10" height="1" stroke={co} />
+            </pattern>
+          ))}
+          {Object.values(CardColorEnum).map((co) => (
+            <pattern
+              id={`${co}full`}
+              x="0"
+              y="0"
+              width="1"
+              height="1"
+              patternUnits="userSpaceOnUse"
+              key={`${co}full`}
+            >
+              {/* 
+                // @ts-ignore */}
+              <rect width="1" height="1" stroke={co} />
+            </pattern>
+          ))}
+        </defs>
+        <g
+          transform={`translate(${
+            number === "one" ? "0" : number === "two" ? "-20" : "-40"
+          }, 0)`}
+        >
           {generateSymbol(color, symbol, shading)}
         </g>
-      )}
-      {number === "three" && (
-        <g transform={`translate(40, 0)`}>
-          {generateSymbol(color, symbol, shading)}
-        </g>
-      )}
-    </svg>
+        {number !== "one" && (
+          <g transform={`translate(${number === "two" ? "20" : "0"}, 0)`}>
+            {generateSymbol(color, symbol, shading)}
+          </g>
+        )}
+        {number === "three" && (
+          <g transform={`translate(40, 0)`}>
+            {generateSymbol(color, symbol, shading)}
+          </g>
+        )}
+      </svg>
+    </button>
   );
 };
 

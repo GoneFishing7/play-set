@@ -1,4 +1,12 @@
 @import "variables";
+.card-wrapper {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  border-width: 0px;
+}
 .card {
   border: 2px solid $card-border-color;
   border-radius: 7%;
