@@ -1,6 +1,6 @@
 # Play Set!
 
-A set game for one player
+A set game for one player.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
