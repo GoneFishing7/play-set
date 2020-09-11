@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Directories
 
-Each directory in this project:
+Directories in this project:
 
 ### `.vscode/`
 
@@ -19,18 +19,6 @@ Static files, such as the favicon, index.html, manifest.json, etc.
 ### `src/`
 
 Contains the code for the site.
-
-### `src/logic/`
-
-Contains the logic for the game: The card model, the Board model, etc.
-
-### `src/ui/`
-
-Contains the tsx and style classes
-
-### `src/utils/`
-
-Has the utils.ts and a few [Inkscape](http://inkscape.org) svgs for reference.
 
 ## Available Scripts
 
