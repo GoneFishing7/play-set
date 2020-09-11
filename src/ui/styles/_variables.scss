@@ -1,5 +1,5 @@
-// Colors from my last project
 $light-background-color: white;
+$dark-background-color: #1b222e;
 
 $default-button-color: #707070;
 $colors: (
@@ -8,10 +8,20 @@ $colors: (
   "orange": #fcab10,
   "blue": #2b9eb3,
 );
+$dark-mode-colors: (
+  "green": #64ce89,
+  "red": #ff5c64,
+  "orange": #ffc355,
+  "blue": #56b6c7,
+);
 
 // Short getters
 @function color($name) {
   @return map-get($map: $colors, $key: $name);
+}
+
+@function darkColor($name) {
+  @return map-get($map: $dark-mode-colors, $key: $name);
 }
 
 $button-height: 60px;
@@ -23,6 +33,7 @@ $min-board-width: 200px;
 
 $card-radius: 7%;
 $card-border-color: black;
+$dark-card-border-color: gray;
 $card-border-color-hovered: gray;
 $card-border-color-selected: blue;
 $card-border-color-selected-hovered: lighten(

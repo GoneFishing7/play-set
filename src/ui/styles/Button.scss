@@ -2,7 +2,7 @@
 
 @mixin buttonVariantOutline($color, $isDark) {
   // Light variant
-  background-color: $light-background-color;
+  background-color: transparent;
   color: color($color);
   border-color: color($color);
 
@@ -10,8 +10,22 @@
     background-color: color($color);
     color: $light-background-color;
     &.button-static {
-      background-color: $light-background-color;
+      background-color: transparent;
       color: color($color);
+    }
+  }
+
+  // Dark variant
+  #app.dark & {
+    color: darkColor($color);
+    border-color: darkColor($color);
+
+    &:hover {
+      background-color: darkColor($color);
+      color: $dark-background-color;
+      &.button-static {
+        color: darkColor($color);
+      }
     }
   }
 }
@@ -19,15 +33,15 @@
 @mixin buttonVariantFilled($color, $isDark) {
   // Light variant
   background-color: color($color);
-  color: $light-background-color;
+  color: transparent;
   border-color: color($color);
 
   &:hover {
-    background-color: $light-background-color;
+    background-color: transparent;
     color: color($color);
     &.button-static {
       background-color: color($color);
-      color: $light-background-color;
+      color: transparent;
     }
   }
 }
@@ -41,16 +55,16 @@
   border: 1px $default-button-color solid;
   color: $default-button-color;
   transition: $button-animation-speed;
-  background-color: $light-background-color;
+  background-color: transparent;
   min-width: $min-button-width;
   user-select: none;
 
   &:hover {
     cursor: pointer;
     background-color: $default-button-color;
-    color: $light-background-color;
+    color: transparent;
     &.button-static {
-      background-color: $light-background-color;
+      background-color: transparent;
       color: $default-button-color;
     }
   }

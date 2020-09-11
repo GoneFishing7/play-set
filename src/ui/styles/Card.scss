@@ -4,34 +4,38 @@
   height: auto;
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: transparent;
   border-width: 0px;
 }
 .card {
   border: 2px solid $card-border-color;
+  border-color: $card-border-color;
+  #app.dark & {
+    border-color: $dark-card-border-color;
+  }
   border-radius: 7%;
   display: block;
   height: auto;
   width: auto;
-  &:hover {
+  #app &:hover {
     cursor: pointer;
     border-color: $card-border-color-hovered;
   }
 
-  &.hint {
+  #app &.hint {
     border-color: $card-border-color-hint;
     &:hover {
       border-color: $card-border-color-hint-hovered;
     }
   }
 
-  &.selected {
+  #app &.selected {
     border-color: $card-border-color-selected;
     &:hover {
       border-color: $card-border-color-selected-hovered;
     }
   }
-  &.unhoverable:hover {
+  #app &.unhoverable:hover {
     cursor: default;
     border-color: $card-border-color;
   }

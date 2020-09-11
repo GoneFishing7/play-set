@@ -82,9 +82,11 @@ class Game extends React.Component<Props, State> {
     );
   };
   shuffleCards = () => {
+    // TODO: Keep selected cards selected. (The indexes will change)
     this.setState((prevState) => {
       return {
         board: _.cloneDeep(prevState.board).shuffle(),
+        selectedCards: [],
       };
     });
   };

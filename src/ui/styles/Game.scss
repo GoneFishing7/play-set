@@ -22,7 +22,6 @@
   }
   // Layout
   @media (max-aspect-ratio: $max-thin-ratio) {
-    color: red;
     width: 90vw;
     height: 130vw;
     // prettier-ignore
@@ -33,7 +32,6 @@
          98fr;
   }
   @media (min-aspect-ratio: $max-thin-ratio) and (max-aspect-ratio: $max-medium-ratio) {
-    color: orange;
     width: 75vh;
     height: 97.5vh;
     // prettier-ignore
@@ -44,7 +42,6 @@
          98fr;
   }
   @media (min-aspect-ratio: $max-medium-ratio) and (max-aspect-ratio: $max-wide-ratio) {
-    color: green;
     width: 97.5vw;
     height: 75vw;
     // prettier-ignore
@@ -54,7 +51,6 @@
         91fr    36fr;
   }
   @media (min-aspect-ratio: $max-wide-ratio) {
-    color: blue;
     width: 130vh;
     height: 90vh;
     // prettier-ignore

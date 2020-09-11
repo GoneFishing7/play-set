@@ -1,5 +1,9 @@
+@import "ui/styles/variables";
+
 body {
   font-family: monospace;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -9,4 +13,25 @@ h4,
 h5,
 h6 {
   font-weight: 300;
+}
+
+#app {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  &.dark {
+    color: white;
+    background-color: $dark-background-color;
+  }
+}
+
+.dark-mode-toggle-wrapper > button {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+
+.no-outline {
+  outline: none;
 }

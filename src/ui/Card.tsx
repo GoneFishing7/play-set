@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardSymbol,
   CardProps,
@@ -16,16 +16,30 @@ interface Props {
 }
 
 const Card = (props: Props) => {
+  const [shouldRenderOutlines, setShouldRenderOutlines] = useState(false);
+
   let { color, symbol, shading, number } = props.cardProperties;
   let classes = ["card"];
+  let wrapperClasses = ["card-wrapper"];
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Tab") {
+      setShouldRenderOutlines(true);
+    }
+  });
+  window.addEventListener("mousedown", (e) => {
+    setShouldRenderOutlines(false);
+  });
   if (props.selected) {
     classes.push("selected");
   }
   if (props.isHint) {
     classes.push("hint");
   }
+  if (!shouldRenderOutlines) {
+    wrapperClasses.push("no-outline");
+  }
   return (
-    <button className="card-wrapper" onClick={props.onClick}>
+    <button className={wrapperClasses.join(" ")} onClick={props.onClick}>
       <svg
         viewBox="0 0 150 100"
         preserveAspectRatio="xMidYMid meet"

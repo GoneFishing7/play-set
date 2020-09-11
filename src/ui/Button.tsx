@@ -9,7 +9,6 @@ interface Props {
   roundedRight?: boolean;
   roundedNone?: boolean;
   staticOnHover?: boolean;
-  position?: string;
 }
 
 const Button = (props: React.PropsWithChildren<Props>) => {
@@ -33,9 +32,6 @@ const Button = (props: React.PropsWithChildren<Props>) => {
   }
   if (props.staticOnHover) {
     classes.push("button-static");
-  }
-  if (props.position) {
-    classes.push(props.position);
   }
   return (
     <button onClick={props.onClick} className={classes.join(" ")}>
