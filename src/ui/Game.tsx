@@ -5,7 +5,7 @@ import Controls from "./Controls";
 
 import "./styles/Game.scss";
 import { isSet, findSets } from "../logic/GameLogic";
-import _ from "lodash";
+import _, { find } from "lodash";
 import { Triple } from "../logic/CardProps";
 
 interface Props {}
@@ -84,10 +84,12 @@ class Game extends React.Component<Props, State> {
   shuffleCards = () => {
     // TODO: Keep selected/hinted cards selected. (The indexes will change)
     this.setState((prevState) => {
+      const newBoard = _.cloneDeep(prevState.board).shuffle();
       return {
-        board: _.cloneDeep(prevState.board).shuffle(),
+        board: newBoard,
         selectedCards: [],
         hintedCards: [],
+        sets: findSets(newBoard.getCards()),
       };
     });
   };
