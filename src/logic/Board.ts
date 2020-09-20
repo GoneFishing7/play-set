@@ -8,7 +8,7 @@ import {
   Triple,
 } from "./CardProps";
 import { getAllEnumKeys } from "enum-for";
-import { findSets } from "./GameLogic";
+import { findSets, isSet } from "./GameLogic";
 
 export default class Board {
   /**
@@ -96,7 +96,8 @@ export default class Board {
         _.some(this.cards, newCards[2]) ||
         _.isEqual(newCards[0], newCards[1]) ||
         _.isEqual(newCards[0], newCards[2]) ||
-        _.isEqual(newCards[1], newCards[2])
+        _.isEqual(newCards[1], newCards[2]) ||
+        isSet(newCards)
       );
       for (let i = 0; i < 3; i++) {
         this.cards[indexes[i]] = newCards[i];
