@@ -5,7 +5,7 @@ import Controls from "./Controls";
 
 import "./styles/Game.scss";
 import { isSet, findSets } from "../logic/GameLogic";
-import _, { find } from "lodash";
+import _ from "lodash";
 import { Triple } from "../logic/CardProps";
 
 interface Props {}
